@@ -1,0 +1,23 @@
+name: AbilityCraft
+version: '${project.version}'
+main: net.the2019.abilitycraft.AbilityCraft
+api-version: 1.18
+authors: [ The2019 ]
+description: The Plugin for Ability Craft
+
+commands:
+  givegrapplinghook:
+    usage: /<Command>
+    description: gives a Grappling Hook!
+  givebloodscyth:
+    usage: /<Command>
+    description: gives a Blood Scyth!
+  givepumkinaxe:
+    usage: /<Command>
+    description: Gives the Pumkin Axe!
+  givemelonecapitor:
+    usage: /<Command>
+    description: Gives the Melone Capitor!
+  givecrimsonchestplate:
+    usage: /<Command>
+    description: Gives theCrimson Chestplate!
