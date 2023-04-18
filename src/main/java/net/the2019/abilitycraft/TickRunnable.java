@@ -1,6 +1,7 @@
 package net.the2019.abilitycraft;
 
 import net.the2019.abilitycraft.items.items;
+import net.the2019.abilitycraft.items.drops;
 import org.bukkit.Bukkit;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
@@ -20,7 +21,11 @@ public class TickRunnable implements Runnable {
     @Override
     public void run() {
         for(Player player : Bukkit.getOnlinePlayers()){
+
             ItemStack chestplate = player.getInventory().getChestplate();
+            ItemStack mainhand = player.getInventory().getItemInMainHand();
+
+
             if(chestplate != null && chestplate.isSimilar(items.CrimsonChestplate)){
                 player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20, 3));
                 player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 20, 2));

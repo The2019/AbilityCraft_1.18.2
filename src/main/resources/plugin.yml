@@ -20,4 +20,7 @@ commands:
     description: Gives the Melone Capitor!
   givecrimsonchestplate:
     usage: /<Command>
-    description: Gives theCrimson Chestplate!
+    description: Gives theC rimson Chestplate!
+  giveenderbow:
+    usage: /<Command>
+    description: Gives the Ender Bow!

@@ -1,4 +1,4 @@
-package net.the2019.abilitycraft;
+package net.the2019.abilitycraft.Abilitys;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;

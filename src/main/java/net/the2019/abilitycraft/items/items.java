@@ -16,6 +16,7 @@ public class items {
     public static ItemStack PumkinAxe;
     public static ItemStack MeloneCapitor;
     public static ItemStack CrimsonChestplate;
+    public static ItemStack EnderBow;
 
     public static void init(){
         CreateGrapplingHook();
@@ -23,10 +24,8 @@ public class items {
         CreatePumkinAxe();
         CreateMeloneCapitor();
         CreateCrimsonChestplate();
+        CreateEnderBow();
     }
-
-
-
     private static void CreateGrapplingHook() {
 
         ItemStack item = new ItemStack(Material.FISHING_ROD, 1);
@@ -106,6 +105,24 @@ public class items {
         item.setItemMeta(meta);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
         CrimsonChestplate = item;
+    }
+    private static void CreateEnderBow(){
+        ItemStack item = new ItemStack(Material.BOW);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Ender Bow");
+        List <String> lore = new ArrayList<>();
+        lore.add("");
+        lore.add("Is crafted with a rare item and can shoot 1 arrow instantly.");
+        lore.add("");
+        lore.add("§6LEGENDARY");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        item.setItemMeta(meta);
+        item.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 5);
+        item.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 10);
+        item.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
+        EnderBow = item;
     }
 }
 
