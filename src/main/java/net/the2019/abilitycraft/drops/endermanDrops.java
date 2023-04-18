@@ -1,7 +1,7 @@
 package net.the2019.abilitycraft.drops;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Enderman;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
@@ -16,15 +16,21 @@ public class endermanDrops implements Listener {
     public void onEntityDeath(EntityDeathEvent event) {
         if (event.getEntity() instanceof Enderman) {
             Random rand = new Random();
-            int chance_enderheart = rand.nextInt(256);
-            int chance_enderreligt = rand.nextInt(500);
+            int chance_enderheart = rand.nextInt(1);    //1 in 250 chance
+            int chance_enderreligt = rand.nextInt(1);   //1 in 500 chance
             if (chance_enderheart == 0) {
                 event.getDrops().add(drops.enderheart);
-                Bukkit.broadcastMessage("§6A rare Item has droped!");
+                Player killer = event.getEntity().getKiller();
+                if (killer != null) {
+                    killer.sendMessage("§6You got a rare item drop!");
+                }
             }
             if (chance_enderreligt == 0) {
                 event.getDrops().add(drops.enderreligt);
-                Bukkit.broadcastMessage("§6A rare Item has droped!");
+                Player killer = event.getEntity().getKiller();
+                if (killer != null) {
+                    killer.sendMessage("§cYou got a special item drop!");
+                }
             }
         }
     }

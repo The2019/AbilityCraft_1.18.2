@@ -1,6 +1,7 @@
 package net.the2019.abilitycraft.Abilitys;
 
 import net.the2019.abilitycraft.AbilityCraft;
+import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.EntityType;
@@ -26,14 +27,15 @@ public class enderBow implements Listener {
 
         if(event.getAction().equals(Action.LEFT_CLICK_AIR) || event.getAction().equals(Action.LEFT_CLICK_BLOCK) ){
             if(player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore().contains("Is crafted with a rare item and can shoot 1 arrow instantly.")){
-
-                Arrow arrow = (Arrow) player.getWorld().spawnEntity(player.getEyeLocation(), EntityType.ARROW);
-                arrow.setVelocity(player.getLocation().getDirection().multiply(2));
-                arrow.setFireTicks(Integer.MAX_VALUE);
-                arrow.setShooter(player);
-                arrow.setPickupStatus(Arrow.PickupStatus.DISALLOWED);
-                arrow.setCritical(true);
-                arrow.setMetadata("damage", new FixedMetadataValue(plugin, 5));
+                if(player.getInventory().contains(Material.ARROW)) {
+                    Arrow arrow = (Arrow) player.getWorld().spawnEntity(player.getEyeLocation(), EntityType.ARROW);
+                    arrow.setVelocity(player.getLocation().getDirection().multiply(2));
+                    arrow.setFireTicks(Integer.MAX_VALUE);
+                    arrow.setShooter(player);
+                    arrow.setPickupStatus(Arrow.PickupStatus.DISALLOWED);
+                    arrow.setCritical(true);
+                    arrow.setMetadata("damage", new FixedMetadataValue(plugin, 5));
+                }
             }
         }
     }

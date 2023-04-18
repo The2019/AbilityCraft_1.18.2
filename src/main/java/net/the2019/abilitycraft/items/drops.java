@@ -13,11 +13,15 @@ public class drops {
 
     public static ItemStack enderheart;
     public static ItemStack enderreligt;
+    public static ItemStack healpast;
+    public static ItemStack healwand;
 
 
     public static void init(){
         CreateEnderHeart();
         CreateEnderReligt();
+        CreateHealPast();
+        CreateHealWandCore();
     }
 
 
@@ -46,5 +50,32 @@ public class drops {
         item.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 1);
         item.setItemMeta(meta);
         enderreligt = item;
+    }
+    private static void CreateHealPast() {
+        ItemStack item = new ItemStack(Material.INK_SAC, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§7Heal Past");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7 A common drop from Zombies.");
+        lore.add("§7 Its used to heal you with the healing Wand.");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
+        healpast = item;
+    }
+    private static void CreateHealWandCore() {
+        ItemStack item = new ItemStack(Material.BONE_MEAL, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Heal Wand Core");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7 A rare drop from Zombies.");
+        lore.add("§7 Its used to craft the Healing Wand.");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        item.setItemMeta(meta);
+        healwand = item;
     }
 }

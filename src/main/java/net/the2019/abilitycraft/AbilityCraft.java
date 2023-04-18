@@ -6,6 +6,7 @@ import net.the2019.abilitycraft.items.items;
 import net.the2019.abilitycraft.items.drops;
 import net.the2019.abilitycraft.start.commands;
 import net.the2019.abilitycraft.start.join;
+import net.the2019.abilitycraft.craftingRecepie.craftingRecepie;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -15,14 +16,19 @@ public final class AbilityCraft extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        //Init
         items.init();
         drops.init();
+
+        //Commands
         this.getCommand("givegrapplinghook").setExecutor(new commands());
         this.getCommand("givebloodscyth").setExecutor(new commands());
         this.getCommand("givepumkinaxe").setExecutor(new commands());
         this.getCommand("givemelonecapitor").setExecutor(new commands());
         this.getCommand("givecrimsonchestplate").setExecutor(new commands());
         this.getCommand("giveenderbow").setExecutor(new commands());
+
+        //Register
         this.getServer().getPluginManager().registerEvents(new grappling_hook(),this);
         this.getServer().getPluginManager().registerEvents(new join(),this);
         this.getServer().getPluginManager().registerEvents(new blood_scyth(this), this);
@@ -30,13 +36,17 @@ public final class AbilityCraft extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new melone_capitor(),this);
         this.getServer().getPluginManager().registerEvents(new endermanDrops(),this);
         this.getServer().getPluginManager().registerEvents(new enderBow(this), this);
+        this.getServer().getPluginManager().registerEvents(new hermitBow(this), this);
 
 
+        //Crafting Recipes
+        craftingRecepie.enderbow(this);
+        craftingRecepie.hermitbow(this);
 
+
+        //Tick
         tickRunnable = new TickRunnable(this);
-
         tickRunnable.start();
-
     }
 
     @Override

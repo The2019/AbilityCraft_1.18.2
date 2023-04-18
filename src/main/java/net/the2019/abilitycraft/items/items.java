@@ -16,7 +16,8 @@ public class items {
     public static ItemStack PumkinAxe;
     public static ItemStack MeloneCapitor;
     public static ItemStack CrimsonChestplate;
-    public static ItemStack EnderBow;
+    public static ItemStack enderbow;
+    public static ItemStack hermitbow;
 
     public static void init(){
         CreateGrapplingHook();
@@ -25,6 +26,7 @@ public class items {
         CreateMeloneCapitor();
         CreateCrimsonChestplate();
         CreateEnderBow();
+        CreateHermitBow();
     }
     private static void CreateGrapplingHook() {
 
@@ -122,7 +124,25 @@ public class items {
         item.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 5);
         item.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 10);
         item.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
-        EnderBow = item;
+        enderbow = item;
+    }
+    private static void CreateHermitBow(){
+        ItemStack item = new ItemStack(Material.BOW);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§cHermit Bow");
+        List <String> lore = new ArrayList<>();
+        lore.add("");
+        lore.add("Is crafted with a special item and can shoot 3 arrow instantly.");
+        lore.add("");
+        lore.add("§cSPECIAL");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        item.setItemMeta(meta);
+        item.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 5);
+        item.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 10);
+        item.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
+        hermitbow = item;
     }
 }
 

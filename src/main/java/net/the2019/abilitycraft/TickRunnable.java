@@ -23,9 +23,6 @@ public class TickRunnable implements Runnable {
         for(Player player : Bukkit.getOnlinePlayers()){
 
             ItemStack chestplate = player.getInventory().getChestplate();
-            ItemStack mainhand = player.getInventory().getItemInMainHand();
-
-
             if(chestplate != null && chestplate.isSimilar(items.CrimsonChestplate)){
                 player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20, 3));
                 player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 20, 2));

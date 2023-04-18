@@ -32,7 +32,7 @@ public class commands implements CommandExecutor {
                 player.getInventory().addItem(items.CrimsonChestplate);
             }
             if(cmd.getName().equalsIgnoreCase("giveenderbow")){
-                player.getInventory().addItem(items.EnderBow);
+                player.getInventory().addItem(items.enderbow);
             }
         }
         else{
