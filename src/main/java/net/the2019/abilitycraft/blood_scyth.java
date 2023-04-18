@@ -1,5 +1,6 @@
 package net.the2019.abilitycraft;
 
+import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -56,8 +57,7 @@ public class blood_scyth implements Listener {
                     public void run(){
 
                         ams.teleport(ams.getLocation().add(vec.normalize()));
-                        ams.getWorld().spawnParticle(Particle.REDSTONE, ams.getLocation(), 1);
-                        
+                        ams.getWorld().spawnParticle(Particle.ASH, ams.getLocation(), 1, 0, 0, 0);
 
 
                         for(Entity entity : ams.getLocation().getChunk().getEntities() ){

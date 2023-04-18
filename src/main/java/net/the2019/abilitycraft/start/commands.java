@@ -1,5 +1,6 @@
-package net.the2019.abilitycraft;
+package net.the2019.abilitycraft.start;
 
+import net.the2019.abilitycraft.items.items;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

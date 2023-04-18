@@ -1,6 +1,8 @@
 package net.the2019.abilitycraft;
 
+import net.the2019.abilitycraft.items.items;
 import org.bukkit.Bukkit;
+import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
@@ -23,6 +25,7 @@ public class TickRunnable implements Runnable {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20, 3));
                 player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 20, 2));
                 player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 20, 5));
+                player.spawnParticle(Particle.DRIP_LAVA, player.getLocation(), 0,0,0,1);
             }
         }
     }

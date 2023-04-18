@@ -1,4 +1,4 @@
-package net.the2019.abilitycraft;
+package net.the2019.abilitycraft.items;
 
 import java.util.ArrayList;
 import java.util.List;
