@@ -24,3 +24,6 @@ commands:
   giveenderbow:
     usage: /<Command>
     description: Gives the Ender Bow!
+  givecobalddrill:
+    usage: /<Command>
+    description: Gives the Coblad Drill!

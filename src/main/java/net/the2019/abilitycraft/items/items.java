@@ -20,6 +20,8 @@ public class items {
     public static ItemStack hermitbow;
     public static ItemStack healwand;
     public static ItemStack ringofthedragon;
+    public static ItemStack cobaldDrill;
+
 
     public static void init(){
         CreateGrapplingHook();
@@ -31,6 +33,7 @@ public class items {
         CreateHermitBow();
         CreateHealingWand();
         CreateRingOfTheDragon();
+        CreateCobaldDrill();
     }
     private static void CreateGrapplingHook() {
 
@@ -178,6 +181,22 @@ public class items {
         meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         item.setItemMeta(meta);
         ringofthedragon = item;
+    }
+    private static void CreateCobaldDrill(){
+        ItemStack item = new ItemStack(Material.DIAMOND_PICKAXE);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Cobald Drill");
+        List <String> lore = new ArrayList<>();
+        lore.add("");
+        lore.add("When mining can instabreak blocks and has vein miner.");
+        lore.add("");
+        lore.add("§cSPECIAL");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        item.setItemMeta(meta);
+        item.addUnsafeEnchantment(Enchantment.DIG_SPEED, 50);
+        cobaldDrill = item;
     }
 }
 

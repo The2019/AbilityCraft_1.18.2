@@ -27,6 +27,7 @@ public final class AbilityCraft extends JavaPlugin {
         this.getCommand("givemelonecapitor").setExecutor(new commands());
         this.getCommand("givecrimsonchestplate").setExecutor(new commands());
         this.getCommand("giveenderbow").setExecutor(new commands());
+        this.getCommand("givecobalddrill").setExecutor(new commands());
 
         //Register
         this.getServer().getPluginManager().registerEvents(new grappling_hook(this),this);
@@ -42,6 +43,7 @@ public final class AbilityCraft extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new enderBow(this), this);
         this.getServer().getPluginManager().registerEvents(new hermitBow(this), this);
         this.getServer().getPluginManager().registerEvents(new healWand(), this);
+        this.getServer().getPluginManager().registerEvents(new cobladDrill(), this);
 
 
         //Crafting Recipes
