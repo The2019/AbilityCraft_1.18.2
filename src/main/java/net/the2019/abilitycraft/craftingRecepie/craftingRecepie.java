@@ -72,4 +72,13 @@ public class craftingRecepie {
         recipe.setIngredient('S', Material.STICK);
         plugin.getServer().addRecipe(recipe);
     }
+    public static void cobalddrill(AbilityCraft plugin) {
+        // Create the recipe
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "cobald_drill"), items.cobaldDrill);
+        recipe.shape(" P ", "PNP", " S ");
+        recipe.setIngredient('P', new RecipeChoice.ExactChoice(drops.cobaldingot));
+        recipe.setIngredient('S', Material.STICK);
+        recipe.setIngredient('N', Material.NETHERITE_INGOT);
+        plugin.getServer().addRecipe(recipe);
+    }
 }

@@ -40,6 +40,7 @@ public final class AbilityCraft extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new melonDrops(),this);
         this.getServer().getPluginManager().registerEvents(new pumkinDrops(),this);
         this.getServer().getPluginManager().registerEvents(new piglinBrutDrops(),this);
+        this.getServer().getPluginManager().registerEvents(new lapizDrops(), this);
         this.getServer().getPluginManager().registerEvents(new enderBow(this), this);
         this.getServer().getPluginManager().registerEvents(new hermitBow(this), this);
         this.getServer().getPluginManager().registerEvents(new healWand(), this);
@@ -54,6 +55,7 @@ public final class AbilityCraft extends JavaPlugin {
         craftingRecepie.healwand(this);
         craftingRecepie.ringoftheragon(this);
         craftingRecepie.bloodscyth(this);
+        craftingRecepie.cobalddrill(this);
 
 
         //Tick

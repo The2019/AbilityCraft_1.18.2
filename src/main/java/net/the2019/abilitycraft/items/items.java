@@ -194,6 +194,7 @@ public class items {
         meta.setLore(lore);
         meta.setUnbreakable(true);
         meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
         item.addUnsafeEnchantment(Enchantment.DIG_SPEED, 50);
         cobaldDrill = item;

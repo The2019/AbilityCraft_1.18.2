@@ -18,6 +18,7 @@ public class drops {
     public static ItemStack compackedpumkin;
     public static ItemStack compackedmelon;
     public static ItemStack piglinblood;
+    public static ItemStack cobaldingot;
 
     public static void init(){
         CreateEnderHeart();
@@ -25,8 +26,9 @@ public class drops {
         CreateHealPast();
         CreateHealWandCore();
         CreateCompackedPumkin();
-        CreatecompackedMelon();
+        CreateCompackedMelon();
         CreatePiglinBlood();
+        CreateCobaldIngot();
     }
 
 
@@ -83,7 +85,7 @@ public class drops {
         item.setItemMeta(meta);
         healwandcore = item;
     }
-    private static void CreatecompackedMelon() {
+    private static void CreateCompackedMelon() {
         ItemStack item = new ItemStack(Material.BONE_MEAL, 1);
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§6Compacked Melon");
@@ -121,5 +123,18 @@ public class drops {
         item.addUnsafeEnchantment(Enchantment.LUCK, 1);
         item.setItemMeta(meta);
         piglinblood = item;
+    }
+    private static void CreateCobaldIngot() {
+        ItemStack item = new ItemStack(Material.IRON_INGOT, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Cobald Ingot");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7 A rare drop from Lapis Lazulis.");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        item.setItemMeta(meta);
+        cobaldingot = item;
     }
 }
