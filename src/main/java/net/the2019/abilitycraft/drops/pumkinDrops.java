@@ -1,4 +1,5 @@
 package net.the2019.abilitycraft.drops;
+import net.the2019.abilitycraft.items.drops;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -19,11 +20,11 @@ public class pumkinDrops implements Listener {
 
         Random random = new Random();
 
-        if(material.equals(Material.MELON)){
+        if(material.equals(Material.PUMPKIN)){
             int chance_compackedpumkin = random.nextInt(1);    //1 in 80 chance
             if(chance_compackedpumkin == 0) {
                 event.setDropItems(false);
-                player.getInventory().addItem(new ItemStack(Material.PUMPKIN, 1)); //Pumkin Compacked
+                player.getInventory().addItem(drops.compackedpumkin); //Pumkin Compacked
             }
         }
     }

@@ -1,5 +1,6 @@
 package net.the2019.abilitycraft.drops;
 
+import net.the2019.abilitycraft.items.drops;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -24,7 +25,7 @@ public class melonDrops implements Listener {
             int chance_compackedmelon = random.nextInt(1);    //1 in 80 chance
             if(chance_compackedmelon == 0) {
                 event.setDropItems(false);
-                player.getInventory().addItem(new ItemStack(Material.MELON, 1)); //Melon Compacked
+                player.getInventory().addItem(drops.compackedmelon); //Melon Compacked
             }
         }
     }

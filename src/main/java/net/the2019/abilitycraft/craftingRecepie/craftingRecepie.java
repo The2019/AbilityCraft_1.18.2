@@ -29,4 +29,30 @@ public class craftingRecepie {
         recipe.setIngredient('B', new RecipeChoice.ExactChoice(items.enderbow));
         plugin.getServer().addRecipe(recipe);
     }
+    public static void pumkinaxe(AbilityCraft plugin) {
+        // Create the recipe
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "pumkin_axe"), items.PumkinAxe);
+        recipe.shape("DD ", "DB ", " S ");
+        recipe.setIngredient('S', Material.STICK);
+        recipe.setIngredient('D', Material.DIAMOND);
+        recipe.setIngredient('B', new RecipeChoice.ExactChoice(drops.compackedpumkin));
+        plugin.getServer().addRecipe(recipe);
+    }
+    public static void meloncapitator(AbilityCraft plugin) {
+        // Create the recipe
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "melon_capitator"), items.MeloneCapitor);
+        recipe.shape("DD ", "DB ", " S ");
+        recipe.setIngredient('S', Material.STICK);
+        recipe.setIngredient('D', Material.DIAMOND);
+        recipe.setIngredient('B', new RecipeChoice.ExactChoice(drops.compackedmelon));
+        plugin.getServer().addRecipe(recipe);
+    }
+    public static void healwand(AbilityCraft plugin) {
+        // Create the recipe
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "heal_wand"), items.healwand);
+        recipe.shape(" B ", " S ", " S ");
+        recipe.setIngredient('S', Material.STICK);
+        recipe.setIngredient('B', new RecipeChoice.ExactChoice(drops.healwandcore));
+        plugin.getServer().addRecipe(recipe);
+    }
 }

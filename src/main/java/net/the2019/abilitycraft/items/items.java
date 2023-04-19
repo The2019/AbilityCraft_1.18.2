@@ -18,6 +18,7 @@ public class items {
     public static ItemStack CrimsonChestplate;
     public static ItemStack enderbow;
     public static ItemStack hermitbow;
+    public static ItemStack healwand;
 
     public static void init(){
         CreateGrapplingHook();
@@ -27,6 +28,7 @@ public class items {
         CreateCrimsonChestplate();
         CreateEnderBow();
         CreateHermitBow();
+        CreateHealingWand();
     }
     private static void CreateGrapplingHook() {
 
@@ -143,6 +145,22 @@ public class items {
         item.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 10);
         item.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
         hermitbow = item;
+    }
+    private static void CreateHealingWand(){
+        ItemStack item = new ItemStack(Material.STICK);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§aHealing Wand");
+        List <String> lore = new ArrayList<>();
+        lore.add("");
+        lore.add("When Right cliked it heals the owner 1 HP,");
+        lore.add("but consumes one Heal Past.");
+        lore.add("");
+        lore.add("§5EPIC");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        item.setItemMeta(meta);
+        healwand = item;
     }
 }
 

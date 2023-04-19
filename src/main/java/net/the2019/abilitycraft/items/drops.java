@@ -14,7 +14,9 @@ public class drops {
     public static ItemStack enderheart;
     public static ItemStack enderreligt;
     public static ItemStack healpast;
-    public static ItemStack healwand;
+    public static ItemStack healwandcore;
+    public static ItemStack compackedpumkin;
+    public static ItemStack compackedmelon;
 
 
     public static void init(){
@@ -22,6 +24,8 @@ public class drops {
         CreateEnderReligt();
         CreateHealPast();
         CreateHealWandCore();
+        CreateCompackedPumkin();
+        CreatecompackedMelon();
     }
 
 
@@ -76,6 +80,32 @@ public class drops {
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.addUnsafeEnchantment(Enchantment.LUCK, 1);
         item.setItemMeta(meta);
-        healwand = item;
+        healwandcore = item;
+    }
+    private static void CreatecompackedMelon() {
+        ItemStack item = new ItemStack(Material.BONE_MEAL, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Compacked Melon");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7 A rare drop from Melons.");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        item.setItemMeta(meta);
+        compackedmelon = item;
+    }
+    private static void CreateCompackedPumkin() {
+        ItemStack item = new ItemStack(Material.ORANGE_DYE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Compacked Pumkin");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7 A rare drop from Pumkins.");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        item.setItemMeta(meta);
+        compackedpumkin = item;
     }
 }
