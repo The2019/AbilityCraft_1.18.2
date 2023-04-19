@@ -29,6 +29,9 @@ public class TickRunnable implements Runnable {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 20, 5));
                 player.spawnParticle(Particle.DRIP_LAVA, player.getLocation(), 0,0,0,1);
             }
+
+
+            player.setAllowFlight(player.getInventory().contains(items.ringofthedragon));
         }
     }
 

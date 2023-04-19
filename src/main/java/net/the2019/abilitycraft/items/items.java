@@ -19,6 +19,7 @@ public class items {
     public static ItemStack enderbow;
     public static ItemStack hermitbow;
     public static ItemStack healwand;
+    public static ItemStack ringofthedragon;
 
     public static void init(){
         CreateGrapplingHook();
@@ -29,6 +30,7 @@ public class items {
         CreateEnderBow();
         CreateHermitBow();
         CreateHealingWand();
+        CreateRingOfTheDragon();
     }
     private static void CreateGrapplingHook() {
 
@@ -161,6 +163,21 @@ public class items {
         meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         item.setItemMeta(meta);
         healwand = item;
+    }
+    private static void CreateRingOfTheDragon(){
+        ItemStack item = new ItemStack(Material.CLAY_BALL);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§cRing of the Dragon");
+        List <String> lore = new ArrayList<>();
+        lore.add("");
+        lore.add("When in your Inventory lets you fly.");
+        lore.add("");
+        lore.add("§cSPECIAL");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        item.setItemMeta(meta);
+        ringofthedragon = item;
     }
 }
 

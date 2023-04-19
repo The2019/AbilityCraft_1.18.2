@@ -17,7 +17,7 @@ public class drops {
     public static ItemStack healwandcore;
     public static ItemStack compackedpumkin;
     public static ItemStack compackedmelon;
-
+    public static ItemStack piglinblood;
 
     public static void init(){
         CreateEnderHeart();
@@ -26,6 +26,7 @@ public class drops {
         CreateHealWandCore();
         CreateCompackedPumkin();
         CreatecompackedMelon();
+        CreatePiglinBlood();
     }
 
 
@@ -107,5 +108,18 @@ public class drops {
         item.addUnsafeEnchantment(Enchantment.LUCK, 1);
         item.setItemMeta(meta);
         compackedpumkin = item;
+    }
+    private static void CreatePiglinBlood() {
+        ItemStack item = new ItemStack(Material.RED_DYE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Piglin Blood");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7 A rare drop from Piglins.");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        item.setItemMeta(meta);
+        piglinblood = item;
     }
 }

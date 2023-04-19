@@ -22,7 +22,7 @@ public class healWand implements Listener {
                 if (inventory.containsAtLeast(drops.healpast, 1)) {
                     inventory.removeItem(drops.healpast);
 
-                    double newHealth = Math.min(player.getHealth() + 1, player.getMaxHealth());
+                    double newHealth = Math.min(player.getHealth() + 2, player.getMaxHealth());
                     player.setHealth(newHealth);
 
                     event.setCancelled(true);

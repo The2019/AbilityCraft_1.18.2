@@ -1,10 +1,7 @@
 package net.the2019.abilitycraft;
 
 import net.the2019.abilitycraft.Abilitys.*;
-import net.the2019.abilitycraft.drops.endermanDrops;
-import net.the2019.abilitycraft.drops.melonDrops;
-import net.the2019.abilitycraft.drops.pumkinDrops;
-import net.the2019.abilitycraft.drops.zombiDrops;
+import net.the2019.abilitycraft.drops.*;
 import net.the2019.abilitycraft.items.items;
 import net.the2019.abilitycraft.items.drops;
 import net.the2019.abilitycraft.start.commands;
@@ -32,7 +29,7 @@ public final class AbilityCraft extends JavaPlugin {
         this.getCommand("giveenderbow").setExecutor(new commands());
 
         //Register
-        this.getServer().getPluginManager().registerEvents(new grappling_hook(),this);
+        this.getServer().getPluginManager().registerEvents(new grappling_hook(this),this);
         this.getServer().getPluginManager().registerEvents(new join(),this);
         this.getServer().getPluginManager().registerEvents(new blood_scyth(this), this);
         this.getServer().getPluginManager().registerEvents(new pumkin_axe(),this);
@@ -41,6 +38,7 @@ public final class AbilityCraft extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new zombiDrops(),this);
         this.getServer().getPluginManager().registerEvents(new melonDrops(),this);
         this.getServer().getPluginManager().registerEvents(new pumkinDrops(),this);
+        this.getServer().getPluginManager().registerEvents(new piglinBrutDrops(),this);
         this.getServer().getPluginManager().registerEvents(new enderBow(this), this);
         this.getServer().getPluginManager().registerEvents(new hermitBow(this), this);
         this.getServer().getPluginManager().registerEvents(new healWand(), this);
@@ -52,6 +50,8 @@ public final class AbilityCraft extends JavaPlugin {
         craftingRecepie.meloncapitator(this);
         craftingRecepie.pumkinaxe(this);
         craftingRecepie.healwand(this);
+        craftingRecepie.ringoftheragon(this);
+        craftingRecepie.bloodscyth(this);
 
 
         //Tick

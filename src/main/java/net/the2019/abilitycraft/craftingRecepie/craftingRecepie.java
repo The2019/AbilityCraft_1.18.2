@@ -55,4 +55,21 @@ public class craftingRecepie {
         recipe.setIngredient('B', new RecipeChoice.ExactChoice(drops.healwandcore));
         plugin.getServer().addRecipe(recipe);
     }
+    public static void ringoftheragon(AbilityCraft plugin) {
+        // Create the recipe
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "ring_of_the_dragon"), items.ringofthedragon);
+        recipe.shape(" N ", "EDE", " N ");
+        recipe.setIngredient('N', Material.NETHER_STAR);
+        recipe.setIngredient('D', Material.DRAGON_EGG);
+        recipe.setIngredient('E', Material.ELYTRA);
+        plugin.getServer().addRecipe(recipe);
+    }
+    public static void bloodscyth(AbilityCraft plugin) {
+        // Create the recipe
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "blood_scyth"), items.BloodScyth);
+        recipe.shape("PPP", "PS ", " S ");
+        recipe.setIngredient('P', new RecipeChoice.ExactChoice(drops.piglinblood));
+        recipe.setIngredient('S', Material.STICK);
+        plugin.getServer().addRecipe(recipe);
+    }
 }
